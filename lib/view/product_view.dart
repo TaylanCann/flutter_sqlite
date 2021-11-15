@@ -3,7 +3,7 @@ import 'package:flutter_sqlite/view_model/product_vm.dart';
 import 'package:provider/provider.dart';
 
 class ProductView extends StatelessWidget {
-  const ProductView({Key? key}) : super(key: key);
+  ProductView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,14 @@ class ProductView extends StatelessWidget {
   }
 
   _appBar() {
-    return AppBar();
+    return AppBar(
+      title: Text("Product"),
+      actions: [
+        GestureDetector(
+          child: Icon(Icons.add),
+        )
+      ],
+    );
   }
 
   Center buildErrorWidget() => Center(child: Text('Something went wrong!'));
